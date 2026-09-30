@@ -22,7 +22,7 @@ jobs:
       - name: Prepare release files
         run: |
           mkdir release
-          cp lib/libguilib.a release/
+          cp libguilib.a release/
           cp include/gui.h release/
 
       - name: Create Release
