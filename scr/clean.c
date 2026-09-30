@@ -11,6 +11,7 @@ void print_clean(int argc, char *argv[]){
     clean();
     (void)argc;
     (void)argv;
+    printf("\033[5mCe texte clignote !\033[0m\n\a");
 }
 
 static struct Command cmd_clean = {

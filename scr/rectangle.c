@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "../include/commands.h"
+#include "../include/colors.h"
+
 
 void gotoxy(int x, int y){
     printf("\033[%d;%dH", y, x);
@@ -10,7 +12,7 @@ void rectangle(int x, int y, int width, int height){
     printf("┌");
 
     for (int i = 0; i < width - 2; i++)
-        printf("―");
+        printf("─");
 
     printf("┐");
 
@@ -27,12 +29,13 @@ void rectangle(int x, int y, int width, int height){
     printf("└");
 
     for (int i = 0; i < width - 2; i++)
-        printf("―");
+        printf("─");
 
     printf("┘");
 }
 
 void print_rect(int argc, char *argv[]){
+    apply_color(RED);
     rectangle(10,10,10,3);
     (void)argc;
     (void)argv;
