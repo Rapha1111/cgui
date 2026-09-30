@@ -3,13 +3,13 @@ LIB = ar rcs
 CFLAGS = -Wall -Wextra
 CFDEBUG = -fsanitize=address -g -Werror
 
-OBJ = colors.o commands.o clean.o rectangle.o
+OBJ = gui.o
 
-test: $(OBJ) test.o
+test: $(OBJ) main.o
 	$(CC) $^ -o $@ $(CFLAGS)
 
-library: $(OBJ)
-	$(LIB) $@.a $^
+build: $(OBJ)
+	$(LIB) libguilib.a $^
 
 debug: $(OBJ)
 	$(CC) $^ -o $@ $(CFLAGS) $(CFDEBUG)
@@ -22,4 +22,4 @@ debug: $(OBJ)
 .PHONY: clean
 
 clean:
-	$(RM) $(OBJ) debug test main.o test.o
+	$(RM) $(OBJ) debug test libguilib.a test.o a.out
